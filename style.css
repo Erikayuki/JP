@@ -1,0 +1,476 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    color: aliceblue;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:15px;
+
+    background:#363131;
+
+}
+
+
+h1 {
+
+    text-align:center;
+
+    font-size:clamp(24px,5vw,40px);
+
+    margin:10px 0 15px;
+
+}
+
+
+
+/* กล่องหลัก */
+
+.box {
+
+    background:rgb(87,86,92);
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:15px;
+
+    box-shadow:0 2px 8px rgb(29,29,29);
+
+}
+
+
+
+/* Flashcard */
+
+#card {
+
+    width:100%;
+
+    min-height:180px;
+
+    padding:15px;
+
+    border:2px solid #cac8c8;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+#word {
+
+    font-size:clamp(35px,8vw,70px);
+
+    text-align:center;
+
+    margin:5px;
+
+}
+
+
+
+/* =================
+   Answer area
+================= */
+
+
+#answer {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    white-space:pre-line;
+
+    line-height:1.45;
+
+    font-size:17px;
+
+}
+
+
+
+/* รูป */
+
+.card-image {
+
+    max-width:100%;
+
+    max-height:220px;
+
+    display:block;
+
+    margin:5px auto;
+
+    border-radius:12px;
+
+}
+
+
+
+/* เสียง */
+
+.audio-box {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:45px;
+
+    margin:2px 0 8px;
+
+}
+
+
+
+.sound-btn {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:42px;
+
+    min-width:42px;
+
+    height:42px;
+
+    padding:0;
+
+    margin:0;
+
+    font-size:22px;
+
+    line-height:1;
+
+    border-radius:50%;
+
+}
+
+
+
+/* เนื้อหา Back */
+
+#answer .back {
+
+    width:100%;
+
+    text-align:left;
+
+    margin:5px 0;
+
+    line-height:1.5;
+
+}
+
+
+
+/* Example */
+
+#answer .example {
+
+    width:100%;
+
+    text-align:left;
+
+    margin-top:10px;
+
+    line-height:1.5;
+
+}
+
+
+
+/* JLPT */
+
+#answer .level {
+
+    width:100%;
+
+    text-align:left;
+
+    margin-top:8px;
+
+}
+
+
+
+/* ปุ่มทั่วไป */
+
+button {
+
+    width:auto;
+
+    min-width:120px;
+
+    padding:12px 18px;
+
+    margin:5px;
+
+    font-size:18px;
+
+    border-radius:12px;
+
+}
+
+
+
+/* Link */
+
+a {
+
+    display:block;
+
+    text-align:center;
+
+    margin:10px;
+
+    color:rgb(203,203,211);
+
+    text-decoration:none;
+
+}
+
+
+a:hover {
+
+    color:rgb(159,159,255);
+
+}
+
+
+a:active {
+
+    color:rgb(197,246,246);
+
+}
+
+
+a:visited {
+
+    color:rgb(247,228,166);
+
+}
+
+
+
+/* Search */
+
+input {
+
+    margin:10px 0;
+
+    height:40px;
+
+    width:100%;
+
+    padding:10px;
+
+}
+
+
+
+/* =================
+ Dictionary
+================= */
+
+
+.dictionary {
+
+    display:flex;
+
+    gap:10px;
+
+    height:calc(100vh - 120px);
+
+}
+
+
+
+.list-panel {
+
+    width:40%;
+
+    overflow-y:auto;
+
+}
+
+
+
+.detail-panel {
+
+    width:60%;
+
+    overflow-y:auto;
+
+    height:100%;
+
+    padding:10px;
+
+}
+
+
+
+.dictionary-card {
+
+    border:1px solid #ccc;
+
+    border-radius:12px;
+
+    padding:10px;
+
+    margin:8px 0;
+
+    cursor:pointer;
+
+    background:rgb(66,63,77);
+
+}
+
+
+.dictionary-card:hover {
+
+    background:#2f2f6a;
+
+}
+
+
+
+.word-image {
+
+    max-width:100%;
+
+    max-height:250px;
+
+    display:block;
+
+    margin:10px auto;
+
+    border-radius:12px;
+
+}
+
+
+
+.detail-card {
+
+    border:2px solid #333;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-top:10px;
+
+}
+
+
+.detail-card h1 {
+
+    margin:0 0 5px;
+
+}
+
+
+.detail-card p {
+
+    margin:5px 0;
+
+}
+
+
+
+.reading {
+
+    font-size:20px;
+
+    color:#ccc;
+
+}
+
+
+
+/* มือถือ */
+
+@media(max-width:600px){
+
+
+body {
+
+    padding:10px;
+
+}
+
+
+.box {
+
+    padding:12px;
+
+}
+
+
+button {
+
+    width:100%;
+
+}
+
+
+#word {
+
+    font-size:42px;
+
+}
+
+
+#answer {
+
+    font-size:17px;
+
+}
+
+
+
+.dictionary {
+
+    display:block;
+
+}
+
+
+.detail-panel {
+
+    display:none;
+
+}
+
+
+}

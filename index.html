@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Japanese Flashcard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<h1>📚 Japanese Flashcard</h1>
+
+
+<a href="all.html">
+ดูศัพท์ทั้งหมด
+</a>
+
+
+
+<div class="box">
+
+<h2>คำที่ถึงเวลาทบทวน</h2>
+
+<div id="card">
+
+<h1 id="word">กำลังโหลด...</h1>
+
+<p id="answer"></p>
+
+</div>
+
+
+
+<button onclick="showAnswer()">
+ดูคำตอบ
+</button>
+
+
+<br>
+
+
+<button onclick="review(true)">
+จำได้ 👍
+</button>
+
+
+<button onclick="review(false)">
+ยังจำไม่ได้ 👎
+</button>
+
+
+</div>
+
+
+<p id="status"></p>
+
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

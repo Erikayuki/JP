@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<a href="all.html">
+← กลับ
+</a>
+
+
+<div id="detail"></div>
+
+
+<script>
+
+
+let card =
+JSON.parse(
+localStorage.getItem("selectedCard")
+);
+
+
+
+detail.innerHTML=`
+
+<h1>${card.Front}</h1>
+
+<p>
+${card.READING || ""}
+</p>
+
+
+<img 
+src="${card.IMAGE_URL}"
+class="word-image"
+>
+
+
+<audio controls>
+
+<source src="${card.AUDIO_URL}">
+
+</audio>
+
+
+<div class="back">
+
+${card.Back}
+
+</div>
+
+
+<p>
+
+${card.EXAMPLE}
+
+</p>
+
+`;
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>All Cards</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>📖 Japanese Dictionary</h1>
+
+
+<a href="index.html">
+← กลับไปทบทวน
+</a>
+
+
+<input 
+id="search"
+placeholder="ค้นหาคำศัพท์ / hiragana / ความหมาย"
+onkeyup="searchCard()"
+>
+
+
+
+<select id="level" onchange="searchCard()">
+
+<option value="">ทุกระดับ</option>
+<option value="N5">N5</option>
+<option value="N4">N4</option>
+<option value="N3">N3</option>
+<option value="N2">N2</option>
+<option value="N1">N1</option>
+
+</select>
+
+<div class="dictionary">
+
+    <div id="list" class="list-panel">
+    </div>
+
+
+    <div id="detail" class="detail-panel">
+
+        <h2>
+        เลือกคำศัพท์
+        </h2>
+
+    </div>
+
+</div>
+
+<script src="all.js"></script>
+
+</body>
+
+</html>

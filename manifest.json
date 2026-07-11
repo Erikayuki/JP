@@ -1,0 +1,9 @@
+{
+"name":"Japanese Flashcard",
+"short_name":"Flashcard",
+"start_url":"index.html",
+"display":"standalone",
+"background_color":"white",
+"description":"Personal Japanese flashcard",
+"orientation":"any"
+}
