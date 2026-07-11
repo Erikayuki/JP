@@ -5,7 +5,18 @@ let current=null;
 const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTKxORwJLSfQk4dCktLQUblnAab4sV-Wh0tpLfcm4Ly5eE9dJiUSJwhOLWX_qyW2StsqdiSqfhe10-T/pub?gid=0&single=true&output=csv";
 
+let currentIndex = 0;
 
+
+fetch(SHEET_URL)
+.then(res=>res.json())
+.then(data=>{
+
+cards=data;
+
+showCard();
+
+});
 
 let progress =
 JSON.parse(localStorage.getItem("progress"))
@@ -304,6 +315,7 @@ function speakJapanese(text){
     speechSynthesis.speak(speech);
 
 }
+
 
 
 loadCards();
