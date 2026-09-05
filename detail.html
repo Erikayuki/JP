@@ -1,78 +1,16 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="th">
 <head>
-
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dictionary Detail</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
+<body class="mobile-detail-page">
 
+<a class="back-link" href="all.html">← กลับไปดูศัพท์ทั้งหมด</a>
+<div id="detail" class="mobile-detail"></div>
 
-<body>
-
-
-<a href="all.html">
-← กลับ
-</a>
-
-
-<div id="detail"></div>
-
-
-<script>
-
-
-let card =
-JSON.parse(
-localStorage.getItem("selectedCard")
-);
-
-
-
-detail.innerHTML=`
-
-<h1>${card.Front}</h1>
-
-<p>
-${card.READING || ""}
-</p>
-
-
-<img 
-src="${card.IMAGE_URL}"
-class="word-image"
->
-
-
-<audio controls>
-
-<source src="${card.AUDIO_URL}">
-
-</audio>
-
-
-<div class="back">
-
-${card.Back}
-
-</div>
-
-
-<p>
-
-${card.EXAMPLE}
-
-</p>
-
-`;
-
-
-</script>
-
-
+<script src="detail.js"></script>
 </body>
-
 </html>
