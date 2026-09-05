@@ -1,75 +1,36 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Japanese Flashcard</title>
-
 <link rel="stylesheet" href="style.css">
-
+<link rel="manifest" href="manifest.json">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
 </head>
-
-
-<body>
-
+<body class="study-page">
 
 <h1>📚 Japanese Flashcard</h1>
 
-
-<a href="all.html">
-ดูศัพท์ทั้งหมด
-</a>
-
-
+<a href="all.html">ดูศัพท์ทั้งหมด</a>
 
 <div class="box">
+    <div class="study-heading-row">
+        <h2>คำที่ถึงเวลาทบทวน</h2>
+        <p id="status" class="study-status"></p>
+    </div>
 
-<h2>คำที่ถึงเวลาทบทวน</h2>
+    <div id="card" role="button" tabindex="0" aria-label="แตะเพื่อพลิกการ์ด">
+        <div id="word">กำลังโหลด...</div>
+        <div id="answer"></div>
+    </div>
 
-<div id="card">
-
-<h1 id="word">กำลังโหลด...</h1>
-
-<p id="answer"></p>
-
+    <div class="review-buttons">
+        <button id="rememberBtn" type="button" onclick="review(true)">จำได้ 👍</button>
+        <button id="forgetBtn" type="button" onclick="review(false)">ยังจำไม่ได้ 👎</button>
+    </div>
 </div>
 
-
-
-<button onclick="showAnswer()">
-ดูคำตอบ
-</button>
-
-
-<br>
-
-
-<button onclick="review(true)">
-จำได้ 👍
-</button>
-
-
-<button onclick="review(false)">
-ยังจำไม่ได้ 👎
-</button>
-
-
-</div>
-
-
-<p id="status"></p>
-
-
-
-
-<script src="js/storage.js"></script>
 <script src="app.js"></script>
-
 </body>
-
 </html>
