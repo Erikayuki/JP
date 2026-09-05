@@ -2,475 +2,434 @@
     box-sizing: border-box;
 }
 
-
-body {
-
-    font-family: Arial, sans-serif;
-
-    color: aliceblue;
-
-    width:100%;
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:15px;
-
-    background:#363131;
-
+:root {
+    color-scheme: dark;
 }
 
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: aliceblue;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+    background: #363131;
+}
 
 h1 {
-
-    text-align:center;
-
-    font-size:clamp(24px,5vw,40px);
-
-    margin:10px 0 15px;
-
+    text-align: center;
+    font-size: clamp(24px, 5vw, 40px);
+    margin: 10px 0 15px;
 }
 
+h2 {
+    margin-top: 0;
+}
 
-
-/* กล่องหลัก */
+/* =================
+   Study page
+================= */
 
 .box {
-
-    background:rgb(87,86,92);
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:12px;
-
-    border-radius:15px;
-
-    box-shadow:0 2px 8px rgb(29,29,29);
-
+    background: rgb(87, 86, 92);
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgb(29, 29, 29);
 }
 
+.study-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
+.study-heading-row h2 {
+    margin-bottom: 8px;
+}
 
-/* Flashcard */
+.study-status {
+    margin: 0 0 8px;
+    color: #d7d7dd;
+    font-size: 14px;
+}
 
 #card {
-
-    width:100%;
-
-    min-height:180px;
-
-    padding:15px;
-
-    border:2px solid #cac8c8;
-
-    border-radius:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
+    width: 100%;
+    min-height: 180px;
+    padding: 15px;
+    border: 2px solid #cac8c8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
 }
 
-
+#card:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.55);
+}
 
 #word {
-
-    font-size:clamp(35px,8vw,70px);
-
-    text-align:center;
-
-    margin:5px;
-
+    font-size: clamp(35px, 8vw, 70px);
+    text-align: center;
+    margin: 5px;
 }
-
-
-
-/* =================
-   Answer area
-================= */
-
 
 #answer {
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    white-space:pre-line;
-
-    line-height:1.45;
-
-    font-size:17px;
-
+    width: 100%;
+    display: none;
+    line-height: 1.45;
+    font-size: 17px;
 }
 
-
-
-/* รูป */
-
-.card-image {
-
-    max-width:100%;
-
-    max-height:220px;
-
-    display:block;
-
-    margin:5px auto;
-
-    border-radius:12px;
-
+.review-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
+/* =================
+   Shared answer/detail content
+================= */
 
+.back-content,
+.example-content {
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+    text-align: left;
+}
 
-/* เสียง */
+.back-content {
+    margin: 0;
+}
+
+.example-section {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.section-title {
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+
+.example-content {
+    margin: 0;
+}
+
+.card-meta {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.cat-label {
+    color: #ff9800;
+    font-weight: 700;
+}
+
+.jlpt-label {
+    color: #fff;
+    font-weight: 700;
+}
+
+.card-image,
+.word-image {
+    max-width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+    border-radius: 12px;
+}
 
 .audio-box {
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    height:45px;
-
-    margin:2px 0 8px;
-
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px 0 4px;
 }
-
-
 
 .sound-btn {
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    width:42px;
-
-    min-width:42px;
-
-    height:42px;
-
-    padding:0;
-
-    margin:0;
-
-    font-size:22px;
-
-    line-height:1;
-
-    border-radius:50%;
-
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 50%;
 }
 
-
-
-/* เนื้อหา Back */
-
-#answer .back {
-
-    width:100%;
-
-    text-align:left;
-
-    margin:5px 0;
-
-    line-height:1.5;
-
+.media-error {
+    width: 100%;
+    margin: 8px 0;
+    color: #ffb74d;
+    text-align: center;
+    font-size: 14px;
 }
-
-
-
-/* Example */
-
-#answer .example {
-
-    width:100%;
-
-    text-align:left;
-
-    margin-top:10px;
-
-    line-height:1.5;
-
-}
-
-
-
-/* JLPT */
-
-#answer .level {
-
-    width:100%;
-
-    text-align:left;
-
-    margin-top:8px;
-
-}
-
-
-
-/* ปุ่มทั่วไป */
-
-button {
-
-    width:auto;
-
-    min-width:120px;
-
-    padding:12px 18px;
-
-    margin:5px;
-
-    font-size:18px;
-
-    border-radius:12px;
-
-}
-
-
-
-/* Link */
-
-a {
-
-    display:block;
-
-    text-align:center;
-
-    margin:10px;
-
-    color:rgb(203,203,211);
-
-    text-decoration:none;
-
-}
-
-
-a:hover {
-
-    color:rgb(159,159,255);
-
-}
-
-
-a:active {
-
-    color:rgb(197,246,246);
-
-}
-
-
-a:visited {
-
-    color:rgb(247,228,166);
-
-}
-
-
-
-/* Search */
-
-input {
-
-    margin:10px 0;
-
-    height:40px;
-
-    width:100%;
-
-    padding:10px;
-
-}
-
-
 
 /* =================
- Dictionary
+   Buttons / links / fields
 ================= */
 
-
-.dictionary {
-
-    display:flex;
-
-    gap:10px;
-
-    height:calc(100vh - 120px);
-
+button {
+    width: auto;
+    min-width: 120px;
+    min-height: 46px;
+    padding: 10px 18px;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
 
+a {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    color: rgb(203, 203, 211);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(159, 159, 255);
+}
+
+a:active {
+    color: rgb(197, 246, 246);
+}
+
+a:visited {
+    color: rgb(247, 228, 166);
+}
+
+input,
+select {
+    background: #171717;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+input {
+    min-width: 0;
+    height: 42px;
+    width: 100%;
+    padding: 10px 12px;
+}
+
+select {
+    min-height: 42px;
+    padding: 8px 34px 8px 12px;
+}
+
+/* =================
+   Dictionary
+================= */
+
+body.dictionary-page {
+    max-width: 1200px;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dictionary-header {
+    flex: 0 0 auto;
+}
+
+.dictionary-header h1 {
+    margin-bottom: 4px;
+}
+
+.dictionary-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
+    margin: 8px 0 12px;
+}
+
+.dictionary {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(260px, 38%) minmax(0, 1fr);
+    gap: 10px;
+}
+
+.list-panel,
+.detail-panel {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
 
 .list-panel {
-
-    width:40%;
-
-    overflow-y:auto;
-
+    padding-right: 4px;
 }
-
-
 
 .detail-panel {
-
-    width:60%;
-
-    overflow-y:auto;
-
-    height:100%;
-
-    padding:10px;
-
+    background: #111;
+    color: #fff;
+    border: 1px solid #414141;
+    border-radius: 14px;
+    padding: 16px;
 }
-
-
 
 .dictionary-card {
-
-    border:1px solid #ccc;
-
-    border-radius:12px;
-
-    padding:10px;
-
-    margin:8px 0;
-
-    cursor:pointer;
-
-    background:rgb(66,63,77);
-
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 0 0 8px;
+    cursor: pointer;
+    background: #111;
+    color: #fff;
+    outline: none;
 }
 
-
-.dictionary-card:hover {
-
-    background:#2f2f6a;
-
+.dictionary-card:hover,
+.dictionary-card:focus-visible {
+    background: #242036;
+    border-color: #777;
 }
 
-
-
-.word-image {
-
-    max-width:100%;
-
-    max-height:250px;
-
-    display:block;
-
-    margin:10px auto;
-
-    border-radius:12px;
-
+.dictionary-card h2 {
+    margin: 0 0 5px;
 }
 
-
-
-.detail-card {
-
-    border:2px solid #333;
-
-    border-radius:15px;
-
-    padding:15px;
-
-    margin-top:10px;
-
+.dictionary-preview {
+    color: #dedee4;
+    line-height: 1.45;
+    margin: 6px 0;
 }
-
-
-.detail-card h1 {
-
-    margin:0 0 5px;
-
-}
-
-
-.detail-card p {
-
-    margin:5px 0;
-
-}
-
-
 
 .reading {
-
-    font-size:20px;
-
-    color:#ccc;
-
+    font-size: 20px;
+    color: #ccc;
 }
 
-
-
-/* มือถือ */
-
-@media(max-width:600px){
-
-
-body {
-
-    padding:10px;
-
+.dictionary-card .reading {
+    margin: 4px 0;
 }
 
-
-.box {
-
-    padding:12px;
-
+.detail-title {
+    text-align: left;
+    margin: 0 0 5px;
 }
 
-
-button {
-
-    width:100%;
-
+.detail-reading {
+    margin-bottom: 10px;
 }
 
-
-#word {
-
-    font-size:42px;
-
+.detail-empty {
+    color: #bdbdc7;
+    text-align: center;
+    padding: 30px 12px;
 }
 
+/* =================
+   Mobile detail
+================= */
 
-#answer {
-
-    font-size:17px;
-
+body.mobile-detail-page {
+    max-width: 760px;
 }
 
-
-
-.dictionary {
-
-    display:block;
-
+.mobile-detail {
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 14px;
+    padding: 16px;
 }
 
-
-.detail-panel {
-
-    display:none;
-
+.back-link {
+    text-align: left;
+    margin-left: 0;
 }
 
+/* =================
+   Responsive
+================= */
 
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .box {
+        padding: 12px;
+    }
+
+    #word {
+        font-size: 42px;
+    }
+
+    #answer {
+        font-size: 17px;
+    }
+
+    .review-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .review-buttons button {
+        width: 100%;
+    }
+
+    body.dictionary-page {
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    .dictionary-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .dictionary {
+        display: block;
+    }
+
+    .list-panel {
+        overflow: visible;
+        padding-right: 0;
+    }
+
+    .detail-panel {
+        display: none;
+    }
 }
